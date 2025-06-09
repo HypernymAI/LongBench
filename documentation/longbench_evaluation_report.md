@@ -188,10 +188,11 @@ if len(input_ids) > max_len:
 
 ### 6.2 Dataset Characteristics
 
-- Total examples: 503
+- Total examples: 503 (from HuggingFace dataset 'THUDM/LongBench-v2')
 - Multiple choice format (A, B, C, D)
 - Average context length: ~7,500 tokens
 - 4 examples exceed 2M characters
+- Dataset loaded via: `load_dataset('THUDM/LongBench-v2', split='train')`
 
 ### 6.3 Google's OpenAI Compatibility
 
@@ -289,20 +290,29 @@ For the complete LongBench-v2 evaluation (503 examples, ~3.8M tokens):
 
 ### 10.4 Performance Comparison
 
-Updated performance ranking:
+Updated performance ranking (including all Gemini models tested):
 1. **Gemini 1.5 Pro: 51.9%** (NEW)
 2. ChatGLM3-6B-32k: 48.5%
 3. Gemini 2.0 Flash: 44.3%
 4. GPT-3.5-Turbo-16k: 44.0%
-5. ChatGLM2-6B-32k: 40.9%
-6. Llama2-7B-chat-4k: 31.0%
+5. **Gemini 1.5 Flash: 42.7%** (NEW)
+6. ChatGLM2-6B-32k: 40.9%
+7. Llama2-7B-chat-4k: 31.0%
+
+Complete Gemini model comparison:
+| Model | Overall | Easy | Hard | Short | Medium | Long |
+|-------|---------|------|------|-------|--------|------|
+| Gemini 1.5 Pro | 51.9% | 59.9% | 46.9% | 51.1% | 49.8% | 57.4% |
+| Gemini 2.0 Flash | 44.3% | 50.5% | 40.5% | 48.3% | 40.9% | 44.4% |
+| Gemini 1.5 Flash | 42.7% | 51.0% | 37.6% | 43.3% | 41.4% | 44.4% |
 
 ### 10.5 Key Findings
 
-1. **Performance gain**: Gemini 1.5 Pro provides a 17% relative improvement over Gemini 2.0 Flash
-2. **Cost-performance ratio**: While 12.5x more expensive, it only provides 7.6 percentage points improvement
-3. **Context handling**: The larger 2M context window shows better performance on long context tasks (57.4% vs 44.4%)
-4. **Consistency**: Gemini 1.5 Pro shows more balanced performance across all difficulty and length categories
+1. **Performance hierarchy**: Gemini 1.5 Pro (51.9%) > Gemini 2.0 Flash (44.3%) > Gemini 1.5 Flash (42.7%)
+2. **Generational improvements**: Gemini 2.0 Flash slightly outperforms 1.5 Flash despite being optimized for speed
+3. **Cost-performance ratio**: Gemini 1.5 Pro is 12.5x more expensive than Flash models but only provides 7.6-9.2 percentage points improvement
+4. **Context handling**: Gemini 1.5 Pro shows superior performance on long context tasks (57.4% vs 44.4%)
+5. **Consistency**: Gemini 1.5 Pro shows more balanced performance across all difficulty and length categories
 
 ### 10.6 Updated Recommendations
 

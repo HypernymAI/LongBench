@@ -1,0 +1,23 @@
+Subject: Urgent - Gemini API Tier 3 Upgrade Request for Customer Validation
+
+Project ID: gen-lang-client-0191283286
+
+Business Need:
+We are conducting performance benchmarking of Gemini models as part of our customer validation process. These benchmarks are critical for:
+- Demonstrating model capabilities to enterprise clients
+- Validating performance metrics for customer onboarding
+- Closing pending sales opportunities that require proven benchmarks
+
+Current Limitation:
+Our current paid_tier quotas (4M tokens/minute) are insufficient for running industry-standard benchmarks at the scale our customers require. This is blocking our sales process.
+
+Requested Upgrade:
+Please upgrade all Gemini models to paid_tier_3 quotas, specifically:
+- gemini-2.0-flash: 4M → 30M tokens/min
+- gemini-2.5-flash: 1M → 8M tokens/min
+- gemini-2.5-pro: 2M → 8M tokens/min
+- Other Gemini models to their respective tier 3 limits
+
+Timeline: Immediate need for customer demonstrations scheduled this week.
+
+We have sufficient GCP credits allocated for this business validation work.
