@@ -6,10 +6,20 @@ compensated = False
 
 for file in files:
     filename = os.path.join('results', file)
+    
+    # Skip empty files
+    if os.path.getsize(filename) == 0:
+        print(f"Warning: Skipping empty file: {filename}")
+        continue
+        
     try:
         pred_data = json.load(open(filename, encoding='utf-8'))
     except Exception as e:
         pred_data = [json.loads(line) for line in open(filename, encoding='utf-8')]
+    
+    # Check for incomplete results (LongBench-v2 has 503 examples)
+    if len(pred_data) < 503:
+        print(f"Warning: {filename} has incomplete results ({len(pred_data)}/503 examples - dataset 'THUDM/LongBench-v2' has 503 total)")
     easy, hard, short, medium, long = 0, 0, 0, 0, 0
     easy_acc, hard_acc, short_acc, medium_acc, long_acc = 0, 0, 0, 0, 0
     for pred in pred_data:
