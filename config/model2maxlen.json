@@ -14,5 +14,11 @@
     "gpt-4o-mini-2024-07-18": 120000,
     "o1-mini-2024-09-12": 120000,
     "o1-preview-2024-09-12": 120000,
-    "claude-3.5-sonnet-20241022": 200000
+    "claude-3.5-sonnet-20241022": 200000,
+    "gemini-1.5-pro": 2000000,
+    "gemini-1.5-flash": 1000000,
+    "gemini-2.0-flash-exp": 1000000,
+    "gemini-2.0-flash": 1048575,
+    "gemini-2.0-flash-lite": 1048575,
+    "gemini-2.5-pro": 2000000
 }
